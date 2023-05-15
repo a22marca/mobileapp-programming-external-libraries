@@ -1,7 +1,7 @@
 
 # Rapport
 
-Det valda externa bibloteket som används i detta projekt är [Picasso](https://square.github.io/picasso/). För att använda bibloteket så lades det till som depenedency i build.gradle(Module :app) filen (se kod nedan).
+Det valda externa biblotek som används i detta projekt är [Picasso](https://square.github.io/picasso/). För att använda bibloteket så lades det till som dependency i build.gradle(Module :app) filen (se kod nedan).
 
 ```
 dependencies {
@@ -15,7 +15,7 @@ dependencies {
 }
 ```
 
-Picasso kan användas för att hämta en bild från t.ex. en assets mapp eller internet för att användas i en `ImageView`. I kodstycket nedan visas en `ImageView` som lagts till `MainActivity` genom att redigera `activity_main.xml`.
+Picasso kan användas för att hämta en bild från t.ex. en assets mapp eller internet och sedan användas i en `ImageView`. I kodstycket nedan visas en `ImageView` som lagts till `MainActivity` genom att redigera `activity_main.xml`.
 
 ```xml
     <ImageView
@@ -34,12 +34,12 @@ Eftersom `Picasso` kan användas för att hämta bilder från internet så behö
     <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-I kodstycket nedan visas implementerad kod från `MainActivity` som skapar ett `Picasso` objekt och sedan hämtar en bild med hjälp av en URL till [Unsplash](https://unsplash.com/). Denna bild läggs sedan till ett `ImageView` objekt som refererar till den `ImageView` som lagts till i `main_activity.xml`.  
+I kodstycket nedan visas implementerad kod från `MainActivity` som skapar ett `Picasso` objekt och sedan hämtar en bild med hjälp av en URL till [Unsplash](https://unsplash.com/). Denna bild läggs till ett `ImageView` objekt som refererar till den `ImageView` som lagts till i `main_activity.xml`.  
 
 ```java
         ImageView picassoImageView = findViewById(R.id.picasso_imageview);
         Picasso.get()
-                .load("https://images.unsplash.com/photo-1679498819175-9b2bc1df5ccf")
+                .load("https://images.unsplash.com/photo-1679498819175-9b2bc1df5ccf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8")
                 .into(picassoImageView);
 ```
 
